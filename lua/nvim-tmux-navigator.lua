@@ -36,7 +36,7 @@ function tmuxAwareNavigate(direction)
     end
 end
 
-local function tmuxNavigate(direction)
+function tmuxNavigate(direction)
 
     -- Get the TMUX socket
     local sock = vim.fn.split(vim.fn.getenv('TMUX'), ',')[1]
