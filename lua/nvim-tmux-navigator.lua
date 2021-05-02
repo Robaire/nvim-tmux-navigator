@@ -51,11 +51,11 @@ end
 local function setup(config)
 
     -- Check for user defined keymaps
-    -- if config then
-    --     if config.bindings then
-    --         updateBindings(config.bindings)
-    --     end
-    -- end
+    if config then
+        if config.bindings then
+            updateBindings(config.bindings)
+        end
+    end
 
     -- Check if NVIM is running in a TMUX environment
     if vim.fn.getenv('TMUX') == vim.NIL then
@@ -65,6 +65,7 @@ local function setup(config)
         vim.api.nvim_set_keymap('n', bindings.down, ':wincmd j<CR>', {noremap = true, silent = true})
         vim.api.nvim_set_keymap('n', bindings.up, ':wincmd k<CR>', {noremap = true, silent = true})
         vim.api.nvim_set_keymap('n', bindings.right, ':wincmd l<CR>', {noremap = true, silent = true})
+        vim.api.nvim_set_keymap('n', bindings.previous, ':wincmd p<CR>', {noremap = true, silent = true})
     else
 
         -- Set the TMUX aware key bindings
