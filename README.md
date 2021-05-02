@@ -22,3 +22,16 @@ By default the following key bindings are added.
 - `<C-L>`: `<C-W><C-L>`
 
 When running Neovim inside of a TMUX environment these bindings will navigate to the adjacent TMUX pane when attempting to navigate past the edge of the Neovim window.
+The default key bindings can be modified as shown below.
+
+```lua
+require('nvim-tmux-navigator').setup{
+    bindings = {
+        left = '<C-H>',
+        down = '<C-J>',
+        up = '<C-K>',
+        right = '<C-L>',
+        previous = '<C-\\>'
+    }
+}
+```
